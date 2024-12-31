@@ -2,7 +2,9 @@
 
 Docker Images for creating Ubuntu based images with specific python versions.
 
-For now, it only supports Ubuntu 16.04 with Python 3.8
+For now, it only supports Ubuntu 16.04 with Python 3.8 (3.8.20)
+
+Since Python 3.8 was deprecated on a lot of platforms, this docker image compiled Python 3.8.20 from source code.
 
 ## Usage
 
@@ -10,6 +12,8 @@ For now, it only supports Ubuntu 16.04 with Python 3.8
 FROM ostai/ubuntu-python:16.04-3.8
 
 RUN ...
+
+CMD ["python3.8", "/usr/src/app/start.py"]
 ```
 
 ## For Developers
