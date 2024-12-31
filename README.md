@@ -6,6 +6,12 @@ For now, it only supports Ubuntu 16.04 with Python 3.8 (3.8.20)
 
 Since Python 3.8 was deprecated on a lot of platforms, this docker image compiled Python 3.8.20 from source code.
 
+## Pull
+
+```sh
+docker pull ostai/ubuntu-python:16.04-3.8
+```
+
 ## Usage
 
 ```Dockerfile
