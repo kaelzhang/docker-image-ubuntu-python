@@ -7,6 +7,10 @@ ARG PYTHON_SHORT_VERSION=3.8
 # ===================================
 FROM ubuntu:${UBUNTU_VERSION} AS builder
 
+# We need to redeclare the ARGs here
+ARG PYTHON_VERSION
+ARG PYTHON_SHORT_VERSION
+
 # Set non-interactive mode for apt-get
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -43,6 +47,9 @@ RUN ./configure --enable-optimizations \
 # ====================================
 FROM ubuntu:${UBUNTU_VERSION}
 
+# We need to redeclare the ARGs here
+ARG PYTHON_SHORT_VERSION
+
 # Set non-interactive mode for apt-get
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -53,7 +60,7 @@ libncurses5 \
 libffi6 \
 zlib1g \
 libsqlite3-0 \
-libreadline7 \
+libreadline6 \
 libtk8.6 \
 libgdbm-dev \
 ca-certificates \
